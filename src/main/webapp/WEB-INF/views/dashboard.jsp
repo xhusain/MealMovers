@@ -10,6 +10,7 @@
 <body>
     <header>
         <h1>Welcome, ${username}</h1>
+        <h1>Welcome, ${user_id}</h1>
     </header>
 
     <main>

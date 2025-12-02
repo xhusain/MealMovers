@@ -53,6 +53,7 @@ public class UserController {
         session.setAttribute("currentUserId", user.getUserId());
         session.setAttribute("currentUserName", user.getName());
 
+
         return "redirect:/dashboard";
     }
 }
