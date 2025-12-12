@@ -3,21 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Meal Movers</title>
-</head>
-<body>
-    <header>
-        <h1>Welcome to Meal Movers</h1>
-    </header>
 
-    <main>
-        <nav>
-            <ul style="list-style: none; padding: 0; margin: 0;">
-                <li><a href="register">Register</a></li>
-                <li><a href="login">Login</a></li>
-            </ul>
-        </nav>
-    </main>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/index.css">
+</head>
+
+<body>
+
+<header class="main-header">
+    <h1>Welcome to Meal Movers</h1>
+</header>
+
+<main class="main-container">
+
+    <nav class="nav-links">
+        <ul>
+            <li><a href="register" class="btn register-btn">Register</a></li>
+            <li><a href="login" class="btn login-btn">Login</a></li>
+        </ul>
+    </nav>
+
+</main>
+
 </body>
 </html>

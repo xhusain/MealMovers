@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #f4f6f9;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+}
+
+/* Header */
+.restaurant-header {
+    text-align: center;
+    background: #4a90e2;
+    padding: 30px 20px;
+    color: white;
+}
+
+.restaurant-header h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+.restaurant-header p {
+    margin: 5px 0;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+.back-link {
+    margin-top: 15px;
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background: #3b7bc4;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.back-link:hover {
+    background: #336bab;
+}
+
+/* Menu Table */
+.menu-section {
+    padding: 30px 20px;
+}
+
+.menu-section h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.menu-table {
+    width: 90 percent;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.menu-table th,
+.menu-table td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+}
+
+.menu-table th {
+    background: #f0f3f7;
+    text-align: left;
+}
+
+.price-col {
+    width: 80px;
+}
+
+.action-col {
+    width: 160px;
+}
+
+/* Add to cart form */
+.qty-label {
+    font-size: 15px;
+}
+
+.qty-input {
+    width: 50px;
+    padding: 5px;
+    margin-left: 5px;
+}
+
+.add-btn {
+    margin-top: 8px;
+    display: block;
+    width: 100 percent;
+    padding: 8px;
+    border: none;
+    background: #4a90e2;
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.add-btn:hover {
+    background: #3b7bc4;
+}

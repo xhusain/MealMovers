@@ -4,32 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Login</title>
+
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/login.css">
 </head>
+
 <body>
 
-    <header>
-        <h1>Login</h1>
-    </header>
+<div class="form-container">
 
-    <main>
-        <form action="login" method="post">
-            <div>
-                <label>Email:</label><br>
-                <input type="email" name="email" required>
-            </div>
+    <h1 class="title">Login</h1>
 
-            <div>
-                <label>Password:</label><br>
-                <input type="password" name="password" required>
-            </div>
+    <form action="login" method="post" class="login-form">
 
-            <div>
-                <input type="submit" value="Login">
-            </div>
-        </form>
-    </main>
+        <label class="input-label">
+            Email
+            <input type="email" name="email" required>
+        </label>
+
+        <label class="input-label">
+            Password
+            <input type="password" name="password" required>
+        </label>
+
+        <button class="submit-btn" type="submit">Login</button>
+
+    </form>
+
+    <p class="register-link">
+        Don't have an account?
+        <a href="${pageContext.request.contextPath}/register">Register</a>
+    </p>
+
+</div>
 
 </body>
 </html>

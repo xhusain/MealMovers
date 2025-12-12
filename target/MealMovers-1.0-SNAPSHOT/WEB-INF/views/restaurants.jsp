@@ -1,39 +1,50 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Restaurants</title>
+    
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/restaurants.css">
 </head>
+
 <body>
-    <header>
-        <h1 style="text-align: center; font-size: 2.5em;">Available Restaurants</h1>
-    </header>
 
-    <section>
-        <c:if test="${empty restaurants}">
-            <div style="text-align: center; font-size: 1.5em; color: gray;">
-                <p>No restaurants found.</p>
+<header class="page-header">
+    <h1>Available Restaurants</h1>
+</header>
+
+<section class="restaurant-list">
+
+    <c:if test="${empty restaurants}">
+        <div class="empty-message">
+            <p>No restaurants found.</p>
+        </div>
+    </c:if>
+
+    <c:forEach var="r" items="${restaurants}">
+        <article class="restaurant-card">
+
+            <h2><c:out value="${r.name}"/></h2>
+
+            <div class="details">
+                <p><strong>Address:</strong> <c:out value="${r.address}"/></p>
+                <p><strong>Phone:</strong> <c:out value="${r.phone}"/></p>
             </div>
-        </c:if>
 
-        <c:forEach var="r" items="${restaurants}">
-            <article style="border: 1px solid #ddd; border-radius: 8px; padding: 20px; margin: 20px auto; width: 80%; max-width: 600px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-                <h2 style="text-align: center; font-size: 2em; color: #333;"> 
-                    <c:out value="${r.name}"/>
-                </h2>
-                <div style="font-size: 1.2em; color: #555;">
-                    <p><strong>Address:</strong> <c:out value="${r.address}"/></p>
-                    <p><strong>Phone:</strong> <c:out value="${r.phone}"/></p>
-                    <p style="text-align: center;">
-                        <a href="${pageContext.request.contextPath}/restaurants/${r.restaurantId}/menu" style="font-size: 1.1em; color: #007BFF; text-decoration: none;">View Menu</a>
-                    </p>
-                </div>
-            </article>
-        </c:forEach>
-    </section>
+            <div class="menu-button">
+                <a href="${pageContext.request.contextPath}/restaurants/${r.restaurantId}/menu">View Menu</a>
+            </div>
 
-    <footer style="text-align: center; padding: 20px; font-size: 1.2em;">
-        <p><a href="${pageContext.request.contextPath}/" style="color: #007BFF; text-decoration: none;">Home</a></p>
-    </footer>
+        </article>
+    </c:forEach>
+
+</section>
+
+<footer class="footer">
+    <a href="${pageContext.request.contextPath}/">Home</a>
+</footer>
+
 </body>
 </html>

@@ -1,0 +1,116 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #f4f6f9;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+}
+
+/* Header */
+.summary-header {
+    background: #4a90e2;
+    padding: 30px;
+    text-align: center;
+    color: white;
+}
+
+.summary-header h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+/* Main container */
+.summary-container {
+    padding: 30px 20px;
+}
+
+/* Empty cart */
+.empty-cart {
+    text-align: center;
+    font-size: 20px;
+}
+
+.empty-cart a {
+    color: #4a90e2;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Table */
+.summary-table {
+    width: 90 percent;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+.summary-table th,
+.summary-table td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+}
+
+.summary-table th {
+    background: #f0f3f7;
+    text-align: left;
+}
+
+.price-col { width: 80px; }
+.qty-col { width: 100px; }
+.subtotal-col { width: 120px; }
+
+/* Total row */
+.total-row td {
+    background: #f9fafb;
+    font-size: 18px;
+}
+
+/* Payment section */
+.payment-section {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.payment-section h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Payment buttons */
+.pay-btn {
+    padding: 12px 20px;
+    border: none;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 260px;
+    margin-bottom: 12px;
+}
+
+.easypaisa { background: #00a859; }
+.easypaisa:hover { background: #00924c; }
+
+.jazzcash { background: #d41e1e; }
+.jazzcash:hover { background: #b81616; }
+
+.cod { background: #6c757d; }
+.cod:hover { background: #5a636b; }
+
+/* Back link */
+.back-cart {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.back-cart a {
+    color: #4a90e2;
+    font-size: 18px;
+    text-decoration: none;
+}

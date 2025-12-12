@@ -1,20 +1,35 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<html>
-<head><title>Thank You</title></head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thank You</title>
+
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/thankyou.css">
+</head>
+
 <body>
-<h1>Thank you</h1>
 
-<p>Your order was placed successfully.</p>
+<div class="container">
 
-<c:if test="${not empty orderId}">
-    <p>Order ID: <strong>${orderId}</strong></p>
-</c:if>
+    <h1 class="title">Thank You!</h1>
 
-<c:if test="${not empty method}">
-    <p>Payment method: <strong>${method}</strong></p>
-</c:if>
+    <p class="message">Your order was placed successfully.</p>
 
-<p><a href="${pageContext.request.contextPath}/restaurants">Back to Main Menu</a></p>
+    <c:if test="${not empty orderId}">
+        <p class="info">Order ID: <strong>${orderId}</strong></p>
+    </c:if>
+
+    <c:if test="${not empty method}">
+        <p class="info">Payment method: <strong>${method}</strong></p>
+    </c:if>
+
+    <a class="back-btn" href="${pageContext.request.contextPath}/restaurants">
+        Back to Main Menu
+    </a>
+
+</div>
+
 </body>
 </html>

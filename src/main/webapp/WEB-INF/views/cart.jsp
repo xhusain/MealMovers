@@ -1,50 +1,68 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<html>
-<head><title>Your Cart</title></head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Cart</title>
+
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/cart.css">
+</head>
+
 <body>
 
-<h1>Your Cart</h1>
+<header class="cart-header">
+    <h1>Your Cart</h1>
+</header>
 
-<table border="1">
-    <tr>
-        <th>Item</th>
-        <th>Price</th>
-        <th>Quantity</th>
-        <th>Subtotal</th>
-        <th>Actions</th>
-    </tr>
+<main class="cart-container">
 
-    <c:forEach var="item" items="${cartItems}">
-        <tr>
-            <td>${item.name}</td>
-            <td>${item.price}</td>
+    <table class="cart-table">
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th class="price-col">Price</th>
+                <th class="qty-col">Quantity</th>
+                <th class="subtotal-col">Subtotal</th>
+                <th class="action-col">Actions</th>
+            </tr>
+        </thead>
 
-            <td>
-                <form action="${pageContext.request.contextPath}/cart/update" method="post">
-                    <input type="hidden" name="cartId" value="${item.cartId}" />
-                    <input type="number" name="quantity" value="${item.quantity}" min="1" />
-                    <input type="submit" value="Update" />
-                </form>
-            </td>
+        <tbody>
+        <c:forEach var="item" items="${cartItems}">
+            <tr>
+                <td>${item.name}</td>
 
-            <td>${item.price * item.quantity}</td>
+                <td>$${item.price}</td>
 
-            <td>
-                <form action="${pageContext.request.contextPath}/cart/remove" method="post">
-                    <input type="hidden" name="cartId" value="${item.cartId}" />
-                    <input type="submit" value="Remove" />
-                </form>
-            </td>
-        </tr>
-    </c:forEach>
-</table>
+                <td>
+                    <form action="${pageContext.request.contextPath}/cart/update" method="post" class="qty-form">
+                        <input type="hidden" name="cartId" value="${item.cartId}">
+                        <input class="qty-input" type="number" name="quantity" value="${item.quantity}" min="1">
+                        <input class="update-btn" type="submit" value="Update">
+                    </form>
+                </td>
 
-<br>
+                <td>$${item.price * item.quantity}</td>
 
-<form action="${pageContext.request.contextPath}/cart/complete" method="post">
-    <button type="submit">Complete Order</button>
-</form>
+                <td>
+                    <form action="${pageContext.request.contextPath}/cart/remove" method="post">
+                        <input type="hidden" name="cartId" value="${item.cartId}">
+                        <input class="remove-btn" type="submit" value="Remove">
+                    </form>
+                </td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
+
+    <div class="complete-order">
+        <form action="${pageContext.request.contextPath}/cart/complete" method="post">
+            <button class="complete-btn" type="submit">Complete Order</button>
+        </form>
+    </div>
+
+</main>
 
 </body>
 </html>

@@ -1,6 +1,7 @@
 package com.mealmovers.dao;
 
 import com.mealmovers.model.CartItem;
+import com.mealmovers.model.OwnerOrderDTO;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
@@ -96,4 +97,29 @@ public class OrderDAOImpl implements OrderDAO {
 
         return orderId;
     }
+    
+    @Override
+    public List<OwnerOrderDTO> getOrdersForOwner(Long ownerId) {
+
+    String sql =
+        "SELECT o.order_id, o.user_id, u.name AS customer_name, " +
+        "o.total_amount, o.status, o.created_at " +
+        "FROM orders o " +
+        "JOIN restaurants r ON o.restaurant_id = r.restaurant_id " +
+        "JOIN users u ON o.user_id = u.user_id " +
+        "WHERE r.owner_id = ? " +
+        "ORDER BY o.order_id DESC";
+          
+    return jdbc.query(sql, (rs, rowNum) -> {
+        OwnerOrderDTO dto = new OwnerOrderDTO();
+        dto.setOrderId(rs.getLong("order_id"));
+        dto.setUserId(rs.getLong("user_id"));
+        dto.setCustomerName(rs.getString("customer_name"));
+        dto.setTotalAmount(rs.getDouble("total_amount"));
+        dto.setStatus(rs.getString("status"));
+        dto.setCreatedAt(rs.getString("created_at"));
+        return dto;
+    }, ownerId);
+}
+
 }

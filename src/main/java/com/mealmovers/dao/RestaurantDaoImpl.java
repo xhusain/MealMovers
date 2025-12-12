@@ -35,6 +35,17 @@ public class RestaurantDaoImpl implements RestaurantDao {
         }
     }
 
+    // ⭐ NEW METHOD: find restaurant belonging to a specific owner
+    @Override
+    public Restaurant findByOwnerId(Long ownerId) {
+        String sql = "SELECT restaurant_id, owner_id, name, address, phone FROM restaurants WHERE owner_id = ?";
+        try {
+            return jdbcTemplate.queryForObject(sql, new Object[]{ownerId}, new RestaurantRowMapper());
+        } catch (EmptyResultDataAccessException e) {
+            return null;
+        }
+    }
+
     private static class RestaurantRowMapper implements RowMapper<Restaurant> {
         @Override
         public Restaurant mapRow(ResultSet rs, int rowNum) throws SQLException {

@@ -1,51 +1,86 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Order Summary</title>
+
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/order_summary.css">
 </head>
+
 <body>
-<h1>Order Summary</h1>
 
-<c:if test="${empty cartItems}">
-    <p>Your cart is empty. <a href="${pageContext.request.contextPath}/restaurants">Back to restaurants</a></p>
-</c:if>
+<header class="summary-header">
+    <h1>Order Summary</h1>
+</header>
 
-<c:if test="${not empty cartItems}">
-    <table border="1" cellpadding="6">
-        <tr><th>Item</th><th>Price</th><th>Quantity</th><th>Subtotal</th></tr>
-        <c:forEach var="it" items="${cartItems}">
+<main class="summary-container">
+
+    <!-- If cart is empty -->
+    <c:if test="${empty cartItems}">
+        <div class="empty-cart">
+            <p>Your cart is empty.</p>
+            <a href="${pageContext.request.contextPath}/restaurants">Back to Restaurants</a>
+        </div>
+    </c:if>
+
+    <!-- If cart has items -->
+    <c:if test="${not empty cartItems}">
+        
+        <table class="summary-table">
+            <thead>
             <tr>
-                <td>${it.name}</td>
-                <td>${it.price}</td>
-                <td>${it.quantity}</td>
-                <td>${it.price * it.quantity}</td>
+                <th>Item</th>
+                <th class="price-col">Price</th>
+                <th class="qty-col">Quantity</th>
+                <th class="subtotal-col">Subtotal</th>
             </tr>
-        </c:forEach>
-        <tr>
-            <td colspan="3" align="right"><strong>Total:</strong></td>
-            <td><strong>${total}</strong></td>
-        </tr>
-    </table>
+            </thead>
 
-    <h3>Choose Payment Method</h3>
+            <tbody>
+            <c:forEach var="it" items="${cartItems}">
+                <tr>
+                    <td>${it.name}</td>
+                    <td>$${it.price}</td>
+                    <td>${it.quantity}</td>
+                    <td>$${it.price * it.quantity}</td>
+                </tr>
+            </c:forEach>
 
-    <form action="${pageContext.request.contextPath}/order/pay" method="post" style="margin-bottom:8px">
-        <input type="hidden" name="method" value="EASYPAY"/>
-        <input type="submit" value="Pay with Easypaisa"/>
-    </form>
+            <tr class="total-row">
+                <td colspan="3" align="right"><strong>Total:</strong></td>
+                <td><strong>$${total}</strong></td>
+            </tr>
+            </tbody>
+        </table>
 
-    <form action="${pageContext.request.contextPath}/order/pay" method="post" style="margin-bottom:8px">
-        <input type="hidden" name="method" value="JAZZCASH"/>
-        <input type="submit" value="Pay with JazzCash"/>
-    </form>
+        <section class="payment-section">
+            <h3>Choose Payment Method</h3>
 
-    <form action="${pageContext.request.contextPath}/order/pay" method="post" style="margin-bottom:8px">
-        <input type="hidden" name="method" value="COD"/>
-        <input type="submit" value="Cash on Delivery"/>
-    </form>
+            <form action="${pageContext.request.contextPath}/order/pay" method="post">
+                <input type="hidden" name="method" value="EASYPAY"/>
+                <input class="pay-btn easypaisa" type="submit" value="Pay with Easypaisa"/>
+            </form>
 
-    <p><a href="${pageContext.request.contextPath}/cart/view">Back to Cart</a></p>
-</c:if>
+            <form action="${pageContext.request.contextPath}/order/pay" method="post">
+                <input type="hidden" name="method" value="JAZZCASH"/>
+                <input class="pay-btn jazzcash" type="submit" value="Pay with JazzCash"/>
+            </form>
+
+            <form action="${pageContext.request.contextPath}/order/pay" method="post">
+                <input type="hidden" name="method" value="COD"/>
+                <input class="pay-btn cod" type="submit" value="Cash on Delivery"/>
+            </form>
+        </section>
+
+        <div class="back-cart">
+            <a href="${pageContext.request.contextPath}/cart/view">Back to Cart</a>
+        </div>
+
+    </c:if>
+
+</main>
+
 </body>
 </html>

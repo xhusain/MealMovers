@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #f4f6f9;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+}
+
+/* Header */
+.dashboard-header {
+    background: #4a90e2;
+    padding: 30px;
+    text-align: center;
+    color: white;
+}
+
+.dashboard-header h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+.dashboard-header h3 {
+    margin-top: 10px;
+    font-size: 22px;
+}
+
+/* Main Container */
+.dashboard-container {
+    padding: 30px 20px;
+}
+
+/* Orders Table */
+.orders-table {
+    width: 90 percent;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.orders-table th,
+.orders-table td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+}
+
+.orders-table th {
+    background: #eef2f6;
+    text-align: left;
+    font-weight: 600;
+}
+
+.orders-table tr:hover {
+    background: #f7f9fc;
+}
+
+/* Logout Button */
+.logout-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.logout-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #e94e4e;
+    color: white;
+    font-size: 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.logout-btn:hover {
+    background: #c84242;
+}

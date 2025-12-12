@@ -15,7 +15,9 @@
         http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <!-- Enable Spring MVC annotations -->
-    <mvc:annotation-driven/>
+    <mvc:resources mapping="/assets/**" location="/assets/" />
+    <mvc:annotation-driven />
+
 
     <!-- Scan for @Controller, @Service, @Repository -->
     <context:component-scan base-package="com.mealmovers"/>

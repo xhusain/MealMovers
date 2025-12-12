@@ -14,11 +14,13 @@ com\mealmovers\dao\OrderDAOImpl.class
 com\mealmovers\controller\HomeController.class
 com\mealmovers\model\CartItem.class
 com\mealmovers\dao\CartDAO.class
+com\mealmovers\model\OwnerOrderDTO.class
 com\mealmovers\model\Cart.class
 com\mealmovers\service\CartService.class
 com\mealmovers\dao\RestaurantDaoImpl$RestaurantRowMapper.class
 com\mealmovers\model\Order.class
 com\mealmovers\service\MenuService.class
+com\mealmovers\controller\OwnerDashboardController.class
 com\mealmovers\model\OrderItem.class
 com\mealmovers\controller\OrderController.class
 com\mealmovers\dao\RestaurantDaoImpl.class

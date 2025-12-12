@@ -4,56 +4,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Register</title>
+
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/register.css">
 </head>
+
 <body>
 
-    <header>
-        <h1>Register</h1>
-    </header>
+<div class="form-container">
 
-    <main>
-        <form action="register" method="post">
+    <h1 class="title">Create Account</h1>
 
-            <div>
-                <label>
-                    Name:<br>
-                    <input type="text" name="name" required>
-                </label>
-            </div>
+    <form action="register" method="post" class="register-form">
 
-            <div>
-                <label>
-                    Email:<br>
-                    <input type="email" name="email" required>
-                </label>
-            </div>
+        <label class="input-label">
+            Name
+            <input type="text" name="name" required>
+        </label>
 
-            <div>
-                <label>
-                    Password:<br>
-                    <input type="password" name="password" required>
-                </label>
-            </div>
+        <label class="input-label">
+            Email
+            <input type="email" name="email" required>
+        </label>
 
-            <div>
-                <label>
-                    Role:<br>
-                    <select name="role">
-                        <option value="CUSTOMER">Customer</option>
-                        <option value="RESTAURANT_OWNER">Restaurant Owner</option>
-                        <option value="RIDER">Rider</option>
-                    </select>
-                </label>
-            </div>
+        <label class="input-label">
+            Password
+            <input type="password" name="password" required>
+        </label>
 
-            <div>
-                <input type="submit" value="Register">
-            </div>
+        <label class="input-label">
+            Role
+            <select name="role">
+                <option value="CUSTOMER">Customer</option>
+                <option value="RESTAURANT_OWNER">Restaurant Owner</option>
+                <option value="RIDER">Rider</option>
+            </select>
+        </label>
 
-        </form>
-    </main>
+        <button class="submit-btn" type="submit">Register</button>
+
+    </form>
+
+    <p class="login-link">
+        Already have an account? 
+        <a href="${pageContext.request.contextPath}/login">Login</a>
+    </p>
+
+</div>
 
 </body>
 </html>

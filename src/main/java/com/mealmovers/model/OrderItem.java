@@ -1,26 +1,24 @@
 package com.mealmovers.model;
 
-import java.math.BigDecimal;
-
 public class OrderItem {
-    private long orderItemId;
-    private long orderId;
-    private long menuId;
+    private Long orderItemId;
+    private Long orderId;
+    private Long menuId;
+    private String menuName; // joined from menus
     private int qty;
-    private BigDecimal price;
+    private double price;
 
-    public long getOrderItemId() { return orderItemId; }
-    public void setOrderItemId(long orderItemId) { this.orderItemId = orderItemId; }
-
-    public long getOrderId() { return orderId; }
-    public void setOrderId(long orderId) { this.orderId = orderId; }
-
-    public long getMenuId() { return menuId; }
-    public void setMenuId(long menuId) { this.menuId = menuId; }
-
+    // getters / setters
+    public Long getOrderItemId() { return orderItemId; }
+    public void setOrderItemId(Long orderItemId) { this.orderItemId = orderItemId; }
+    public Long getOrderId() { return orderId; }
+    public void setOrderId(Long orderId) { this.orderId = orderId; }
+    public Long getMenuId() { return menuId; }
+    public void setMenuId(Long menuId) { this.menuId = menuId; }
+    public String getMenuName() { return menuName; }
+    public void setMenuName(String menuName) { this.menuName = menuName; }
     public int getQty() { return qty; }
     public void setQty(int qty) { this.qty = qty; }
-
-    public BigDecimal getPrice() { return price; }
-    public void setPrice(BigDecimal price) { this.price = price; }
+    public double getPrice() { return price; }
+    public void setPrice(double price) { this.price = price; }
 }

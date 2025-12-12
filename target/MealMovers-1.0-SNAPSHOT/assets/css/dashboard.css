@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f9;
+    color: #333;
+}
+
+.top-header {
+    background: #4a90e2;
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+.welcome-box h2 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.uid {
+    margin-top: 5px;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+.main-content {
+    margin: 40px auto;
+    width: 90 percent;
+    max-width: 600px;
+}
+
+.info-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.dashboard-nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.dashboard-nav a {
+    text-decoration: none;
+}
+
+.btn {
+    display: block;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.btn.primary {
+    background: #4a90e2;
+    color: white;
+}
+
+.btn.primary:hover {
+    background: #437fc4;
+}
+
+.btn.danger {
+    background: #e94e4e;
+    color: white;
+}
+
+.btn.danger:hover {
+    background: #c84242;
+}
+
+.footer {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 14px;
+    color: #777;
+    padding: 20px;
+}

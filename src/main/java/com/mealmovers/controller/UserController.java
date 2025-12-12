@@ -52,8 +52,13 @@ public class UserController {
 
         session.setAttribute("currentUserId", user.getUserId());
         session.setAttribute("currentUserName", user.getName());
+        session.setAttribute("currentUserRole", user.getRole());
 
+        // Redirect based on role
+        if ("RESTAURANT_OWNER".equals(user.getRole())) {
+            return "redirect:/owner/dashboard";
+        }
 
-        return "redirect:/dashboard";
+        return "redirect:/dashboard";   // customer dashboard
     }
-}
+    }
