@@ -6,6 +6,7 @@ body {
     color: #333;
 }
 
+/* Header */
 .cart-header {
     background: #4a90e2;
     color: white;
@@ -18,13 +19,14 @@ body {
     font-size: 32px;
 }
 
+/* Main Section */
 .cart-section {
     padding: 30px 20px;
 }
 
-/* Table */
+/* Cart Table */
 .cart-table {
-    width: 90 percent;
+    width: 90%;
     max-width: 1000px;
     margin: 0 auto;
     border-collapse: collapse;
@@ -47,19 +49,22 @@ body {
     font-weight: bold;
 }
 
+/* Column sizes */
 .price-col { width: 90px; }
 .qty-col { width: 160px; }
 .subtotal-col { width: 100px; }
 .action-col { width: 130px; }
 
-/* Qty form */
+/* Quantity */
 .qty-input {
     width: 60px;
     padding: 6px;
     margin-bottom: 6px;
 }
 
+/* Update button */
 .update-btn {
+    width: 100%;
     padding: 6px 10px;
     background: #6ba5ff;
     border: none;
@@ -67,15 +72,15 @@ body {
     font-weight: bold;
     border-radius: 5px;
     cursor: pointer;
-    width: 100 percent;
 }
 
 .update-btn:hover {
     background: #5a92e0;
 }
 
-/* Remove btn */
+/* Remove button */
 .remove-btn {
+    width: 100%;
     padding: 6px 10px;
     background: #e74c3c;
     border: none;
@@ -83,7 +88,6 @@ body {
     font-weight: bold;
     border-radius: 5px;
     cursor: pointer;
-    width: 100 percent;
 }
 
 .remove-btn:hover {
@@ -97,6 +101,7 @@ body {
 }
 
 .complete-btn {
+    display: inline-block;
     padding: 12px 25px;
     font-size: 18px;
     background: #4a90e2;

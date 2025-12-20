@@ -17,7 +17,6 @@
     <header class="top-header">
         <div class="welcome-box">
             <h2>Hello, <span>${username}</span></h2>
-            <p class="uid">User ID, ${user_id}</p>
         </div>
     </header>
 

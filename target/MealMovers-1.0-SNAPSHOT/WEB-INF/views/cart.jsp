@@ -15,7 +15,7 @@
     <h1>Your Cart</h1>
 </header>
 
-<main class="cart-container">
+<main class="cart-section">
 
     <table class="cart-table">
         <thead>
@@ -32,11 +32,10 @@
         <c:forEach var="item" items="${cartItems}">
             <tr>
                 <td>${item.name}</td>
-
                 <td>$${item.price}</td>
 
                 <td>
-                    <form action="${pageContext.request.contextPath}/cart/update" method="post" class="qty-form">
+                    <form action="${pageContext.request.contextPath}/cart/update" method="post">
                         <input type="hidden" name="cartId" value="${item.cartId}">
                         <input class="qty-input" type="number" name="quantity" value="${item.quantity}" min="1">
                         <input class="update-btn" type="submit" value="Update">
@@ -56,7 +55,8 @@
         </tbody>
     </table>
 
-    <div class="complete-order">
+    <!-- CENTERED BUTTON -->
+    <div class="complete-box">
         <form action="${pageContext.request.contextPath}/cart/complete" method="post">
             <button class="complete-btn" type="submit">Complete Order</button>
         </form>
