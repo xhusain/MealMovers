@@ -16,6 +16,13 @@
 
 <main class="main-container">
 
+    <!-- IMAGE SECTION -->
+    <div class="hero-image">
+        <img 
+            src="${pageContext.request.contextPath}/assets/images/hero.png"
+            alt="Delicious food delivery">
+    </div>
+
     <nav class="nav-links">
         <ul>
             <li><a href="register" class="btn register-btn">Register</a></li>

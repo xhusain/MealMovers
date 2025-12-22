@@ -10,43 +10,57 @@ body {
 /* Header */
 .main-header {
     background: #4a90e2;
-    padding: 40px 20px;
+    padding: 35px 20px;
     color: white;
 }
 
 .main-header h1 {
     margin: 0;
-    font-size: 34px;
+    font-size: 36px;
 }
 
 /* Main container */
 .main-container {
-    margin-top: 50px;
+    margin-top: 30px;
+    padding: 20px;
+}
+
+/* Image */
+.hero-image {
+    margin: 30px auto;
+    max-width: 900px;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 }
 
 /* Navigation buttons */
 .nav-links ul {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 40px 0 0 0;
 }
 
 .nav-links li {
-    margin: 20px 0;
+    margin: 15px 0;
 }
 
 .btn {
     display: inline-block;
-    padding: 12px 24px;
+    width: 220px;
+    padding: 14px 0;
     font-size: 18px;
-    text-decoration: none;
     font-weight: bold;
+    text-decoration: none;
     border-radius: 8px;
-    width: 200px;
     transition: 0.2s;
 }
 
-/* Register button */
+/* Register */
 .register-btn {
     background: #28a745;
     color: white;
@@ -56,7 +70,7 @@ body {
     background: #218838;
 }
 
-/* Login button */
+/* Login */
 .login-btn {
     background: #4a90e2;
     color: white;
