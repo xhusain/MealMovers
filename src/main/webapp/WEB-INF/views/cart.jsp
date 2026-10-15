@@ -31,8 +31,8 @@
         <tbody>
         <c:forEach var="item" items="${cartItems}">
             <tr>
-                <td>${item.name}</td>
-                <td>$${item.price}</td>
+                <td><c:out value="${item.name}"/></td>
+                <td>$<c:out value="${item.price}"/></td>
 
                 <td>
                     <form action="${pageContext.request.contextPath}/cart/update" method="post">
@@ -42,7 +42,7 @@
                     </form>
                 </td>
 
-                <td>$${item.price * item.quantity}</td>
+                <td>$<c:out value="${item.price * item.quantity}"/></td>
 
                 <td>
                     <form action="${pageContext.request.contextPath}/cart/remove" method="post">

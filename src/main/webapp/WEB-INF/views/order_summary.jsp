@@ -41,16 +41,16 @@
             <tbody>
             <c:forEach var="it" items="${cartItems}">
                 <tr>
-                    <td>${it.name}</td>
-                    <td>$${it.price}</td>
-                    <td>${it.quantity}</td>
-                    <td>$${it.price * it.quantity}</td>
+                    <td><c:out value="${it.name}"/></td>
+                    <td>$<c:out value="${it.price}"/></td>
+                    <td><c:out value="${it.quantity}"/></td>
+                    <td>$<c:out value="${it.price * it.quantity}"/></td>
                 </tr>
             </c:forEach>
 
             <tr class="total-row">
                 <td colspan="3" align="right"><strong>Total:</strong></td>
-                <td><strong>$${total}</strong></td>
+                <td><strong>$<c:out value="${total}"/></strong></td>
             </tr>
             </tbody>
         </table>

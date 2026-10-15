@@ -18,11 +18,11 @@
     <p class="message">Your order was placed successfully.</p>
 
     <c:if test="${not empty orderId}">
-        <p class="info">Order ID: <strong>${orderId}</strong></p>
+        <p class="info">Order ID: <strong><c:out value="${orderId}"/></strong></p>
     </c:if>
 
     <c:if test="${not empty method}">
-        <p class="info">Payment method: <strong>${method}</strong></p>
+        <p class="info">Payment method: <strong><c:out value="${method}"/></strong></p>
     </c:if>
 
     <a class="back-btn" href="${pageContext.request.contextPath}/restaurants">

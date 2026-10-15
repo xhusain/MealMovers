@@ -14,7 +14,7 @@
 <body>
     <header class="header">
         <div class="title-box">
-            <h1 class="main-message">${message}</h1>
+            <h1 class="main-message"><c:out value="${message}"/></h1>
         </div>
     </header>
 

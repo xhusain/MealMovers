@@ -16,7 +16,7 @@
 <body>
     <header class="top-header">
         <div class="welcome-box">
-            <h2>Hello, <span>${username}</span></h2>
+            <h2>Hello, <span><c:out value="${username}"/></span></h2>
         </div>
     </header>
 

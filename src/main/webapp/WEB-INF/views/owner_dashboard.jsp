@@ -11,7 +11,7 @@
 <body>
 
 <header class="dashboard-header">
-    <h1>Welcome, ${ownerName}</h1>
+    <h1>Welcome, <c:out value="${ownerName}"/></h1>
     <h3>Your Restaurant Orders</h3>
 </header>
 
@@ -31,11 +31,11 @@
         <tbody>
         <c:forEach var="order" items="${orders}">
             <tr>
-                <td>${order.orderId}</td>
-                <td>${order.customerName}</td>
-                <td>$${order.totalAmount}</td>
-                <td>${order.status}</td>
-                <td>${order.createdAt}</td>
+                <td><c:out value="${order.orderId}"/></td>
+                <td><c:out value="${order.customerName}"/></td>
+                <td>$<c:out value="${order.totalAmount}"/></td>
+                <td><c:out value="${order.status}"/></td>
+                <td><c:out value="${order.createdAt}"/></td>
             </tr>
         </c:forEach>
         </tbody>
